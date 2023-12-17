@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "810256117032",
+    "firebase_url": "https://math-train-game-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "math-train-game",
+    "storage_bucket": "math-train-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810256117032:android:95241f09bf0af9fc3a341d",
+        "android_client_info": {
+          "package_name": "com.example.esimapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAa7VM8buUM3mJCZfr5TFmC8U56cP10fbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
