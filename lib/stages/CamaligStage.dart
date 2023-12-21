@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:esimapp/component/SettingsDrop.dart';
+import 'package:esimapp/levels/Stage7Level1.dart';
 
 class CamaligStage extends StatefulWidget {
   @override
@@ -10,44 +12,47 @@ class _CamaligStageState extends State<CamaligStage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          GestureDetector(
-            onPanUpdate: (details) {
-              setState(() {
-                RenderBox renderBox = context.findRenderObject() as RenderBox;
-                points.add(renderBox.globalToLocal(details.globalPosition));
-              });
-            },
-            onPanEnd: (details) => points.add(null),
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  'assets/img/mayon.gif',
+                ),
+                fit: BoxFit.fitHeight,
               ),
-              child: CustomPaint(
-                painter: MyPainter(points),
+            ),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              decoration: const BoxDecoration(
+                color: Color(0x47848484),
+              ),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      SettingsDrop(),
+                    ],
+                  ),
+                  Stage7Level1(),
+                ],
               ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ColumnItem('A1'),
-              ColumnItem('A2'),
-              ColumnItem('A3'),
-            ],
-          ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ColumnItem('B1'),
-              ColumnItem('B2'),
-              ColumnItem('B3'),
-            ],
-          ),
         ],
-      );
+      ),
+    );
   }
 }
 
