@@ -129,8 +129,8 @@ class _DaragaHoyopHoyopanState extends State<DaragaHoyopHoyopan> {
   final databaseRef = FirebaseDatabase.instance.ref();
 
   List<List<bool>> selectedChoices = [
-    [false, false, false, false],
-    [false, false, false, false],
+    [false, false, false, false], // [1, 0, 0, 0]
+    [false, false, false, false], // [0, 1, 0, 0],
     [false, false, false, false],
     [false, false, false, false],
     [false, false, false, false],
@@ -144,6 +144,8 @@ class _DaragaHoyopHoyopanState extends State<DaragaHoyopHoyopan> {
 
   void nextQuestion() {
     if (questionIndex < questions.length - 1) {
+
+      // if(question)
       setState(() {
         questionIndex++;
         questionNum = questionIndex + 1;
